@@ -12,31 +12,14 @@ const preMovie = async ()=> {
 
   const getColdDrinks = new Promise((resolve, reject) => resolve('coldrink'));
 
+  const getCandy = new Promise((resolve, reject) => resolve('candy'));
+
  let ticket = await promiseWife;
 
- console.log(`Wife: i have ${ticket}`);
- console.log('Husband: We should go');
- console.log('Wife: No i am hungry');
+ let [popcorn, butter,coldrink, candy] = await Promise.all([ getPopCorn, addButter,  getCandy,getColdDrinks]);
 
- let popcorn = await getPopCorn;
+ console.log(`${popcorn}, ${butter}, ${coldrink}, ${candy}`);
 
- console.log(`husband: i got some ${popcorn}`);
- console.log('Husband: We should go');
- console.log('Wife: No i need some butter');
-
- let butter = await addButter;
-
- console.log(`Husband: i got some ${butter}`);
- console.log('Husband: Anything else');
- console.log('Wife: Yes, get me a cold drink');
-
- let coldrink = await getColdDrinks;
-
- console.log(`Husband: i got some ${coldrink}`);
- console.log('Wife: We shold go now');
- console.log('Husband: Anything else');
- console.log('Wife: Lets go we are getting late');
- console.log('Husband: Thank you, lets goo!!!!!!!!!!');
 
  return ticket;
 }
